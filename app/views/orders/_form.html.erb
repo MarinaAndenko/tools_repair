@@ -11,6 +11,26 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :tool_id %>
+    <%= f.text_field :tool_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :repair_id %>
+    <%= f.text_field :repair_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :client_id %>
+    <%= f.text_field :client_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date %>
+    <%= f.date_select :start_date %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -11,6 +11,21 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :duration %>
+    <%= f.number_field :duration %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

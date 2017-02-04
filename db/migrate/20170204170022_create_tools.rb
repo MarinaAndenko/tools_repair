@@ -4,7 +4,7 @@ class CreateTools < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :country
       t.string :brand
-      t.date   :production_year
+      t.date :production_year
       t.string :type
 
       t.timestamps

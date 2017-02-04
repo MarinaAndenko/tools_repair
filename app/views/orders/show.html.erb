@@ -1,4 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Tool:</strong>
+  <%= @order.tool %>
+</p>
+
+<p>
+  <strong>Repair:</strong>
+  <%= @order.repair %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @order.client %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @order.start_date %>
+</p>
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

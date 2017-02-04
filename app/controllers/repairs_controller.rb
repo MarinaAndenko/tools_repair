@@ -69,6 +69,6 @@ class RepairsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def repair_params
-      params.fetch(:repair, {})
+      params.require(:repair).permit(:name, :duration, :price)
     end
 end

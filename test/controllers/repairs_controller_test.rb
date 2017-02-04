@@ -17,7 +17,7 @@ class RepairsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create repair" do
     assert_difference('Repair.count') do
-      post repairs_url, params: { repair: {  } }
+      post repairs_url, params: { repair: { duration: @repair.duration, name: @repair.name, price: @repair.price } }
     end
 
     assert_redirected_to repair_url(Repair.last)
@@ -34,7 +34,7 @@ class RepairsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update repair" do
-    patch repair_url(@repair), params: { repair: {  } }
+    patch repair_url(@repair), params: { repair: { duration: @repair.duration, name: @repair.name, price: @repair.price } }
     assert_redirected_to repair_url(@repair)
   end
 

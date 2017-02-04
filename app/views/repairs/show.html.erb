@@ -1,4 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @repair.name %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @repair.duration %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @repair.price %>
+</p>
+
 <%= link_to 'Edit', edit_repair_path(@repair) %> |
 <%= link_to 'Back', repairs_path %>
