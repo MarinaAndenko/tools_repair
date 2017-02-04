@@ -13,12 +13,20 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-/tmp/*
 !/log/.keep
-!/tmp/.keep
+/tmp
+/coverage
 
-# Ignore Byebug command history file.
-.byebug_history
+config/database.yml
+config/secrets.yml
+config/newrelic.yml
+# Ignore rvm configs
+.rvmrc
+# .ruby-version
+# .ruby-gemset
 
-# Ignore local env variable file
-.env
+/.idea
+/*.DS_Store
+*.DS_Store
+/.DS_Store
+.DS_Store
