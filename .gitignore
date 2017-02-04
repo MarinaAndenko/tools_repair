@@ -19,7 +19,6 @@
 
 config/database.yml
 config/secrets.yml
-config/newrelic.yml
 # Ignore rvm configs
 .rvmrc
 # .ruby-version
