@@ -28,3 +28,9 @@ a{
 .has-error > .help-block{
   margin-left: 18%;
 }
+
+.nav>li>a:hover, .nav>li>a:focus, a.navbar-brand:hover,
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+  background-color: #0275d8 !important;
+  color: white !important;
+}
