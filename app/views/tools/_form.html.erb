@@ -1,42 +1,47 @@
-<%= form_for(tool) do |f| %>
-  <% if tool.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(tool.errors.count, "error") %> prohibited this tool from being saved:</h2>
+<%= form_for @tool, :html => { :class => "form-horizontal tool" } do |f| %>
 
-      <ul>
-      <% tool.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control' %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%=f.error_span(:name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :country, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :country, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:country) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :brand, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :brand, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:brand) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :production_year, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :production_year, :class => 'form-control datepicker_tools' %>
+    </div>
+    <%=f.error_span(:production_year) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tool_type, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tool_type, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tool_type) %>
   </div>
 
-  <div class="field">
-    <%= f.label :country %>
-    <%= f.text_field :country %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tools_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :brand %>
-    <%= f.text_field :brand %>
-  </div>
-
-  <div class="field">
-    <%= f.label :production_year %>
-    <%= f.date_select :production_year %>
-  </div>
-
-  <div class="field">
-    <%= f.label :type %>
-    <%= f.text_field :type %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

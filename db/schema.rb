@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20170204213023) do
     t.string   "country"
     t.string   "brand"
     t.date     "production_year"
-    t.string   "type"
+    t.string   "tool_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

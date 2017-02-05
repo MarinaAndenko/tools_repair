@@ -1,0 +1,30 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require bootstrap-datepicker3
+ *= require_self
+ *= require_tree .
+*/
+
+.new-record-button.btn{
+  color: white;
+  margin-bottom: 1%;
+}
+
+.delete-record-button.btn{
+  color: white;
+}
+
+.title-with-button{
+  display: inline-block;
+  width: 15%;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+.has-error > .help-block{
+  margin-left: 18%;
+}
