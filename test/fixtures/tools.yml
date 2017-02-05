@@ -4,12 +4,12 @@ one:
   name: MyString
   country: MyString
   brand: MyString
-  production_year: 2017-02-04
-  type: 
+  production_year: 2017-02-05
+  tool_type: MyString
 
 two:
   name: MyString
   country: MyString
   brand: MyString
-  production_year: 2017-02-04
-  type: 
+  production_year: 2017-02-05
+  tool_type: MyString

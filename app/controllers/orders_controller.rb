@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_collections, only: [:new, :create, :edit, :update]
 
   # GET /orders
   # GET /orders.json
@@ -70,5 +71,11 @@ class OrdersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:tool_id, :repair_id, :client_id, :start_date)
+    end
+
+    def set_collections
+      @clients = Client.all
+      @tools = Tool.all
+      @repairs = Repair.all
     end
 end

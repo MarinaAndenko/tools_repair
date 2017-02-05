@@ -1,5 +1,5 @@
-<div class="container">
-  <h2>New Tool</h2>
-  <%= render 'form', tool: @tool %>
-  <%= link_to 'Back', tools_path %>
+<%- model_class = Tool -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
 </div>
+<%= render :partial => 'form' %>

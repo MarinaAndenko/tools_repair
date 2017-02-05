@@ -1,33 +1,41 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Orders</h1>
-
-<table>
+<%- model_class = Order -%>
+<div class="page-header">
+  <h1 class='title-with-button'><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+            new_order_path,
+            :class => 'btn btn-primary new-record-button' %>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Tool</th>
-      <th>Repair</th>
-      <th>Client</th>
-      <th>Start date</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:client_id) %></th>
+      <th><%= model_class.human_attribute_name(:tool_id) %></th>
+      <th><%= model_class.human_attribute_name(:repair_id) %></th>
+      <th><%= model_class.human_attribute_name(:start_date) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.tool %></td>
-        <td><%= order.repair %></td>
-        <td><%= order.client %></td>
-        <td><%= order.start_date %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to order.id, order_path(order) %></td>
+        <td><%= link_to order.client.name, client_path(order.client) %></td>
+        <td><%= link_to order.tool.name, tool_path(order.tool) %></td>
+        <td><%= link_to order.repair.name, repair_path(order.repair) %></td>
+        <td><%= order.start_date.strftime("%d/%m/%Y") %></td>
+        <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_order_path(order), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      order_path(order),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger delete-record-button' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Order', new_order_path %>

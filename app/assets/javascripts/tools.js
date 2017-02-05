@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  $("[data-provide~='datepicker']").datepicker({
+  $(".datepicker_tools").datepicker({
     format: ' yyyy',
     autoclose: true,
     startView: 'years', 
-    minViewMode: 2
-  //   startDate: '2000',
-  //   endDate: new Date(),
+    minViewMode: 2,
+    startDate: '2000',
+    endDate: new Date()
   });
 });
