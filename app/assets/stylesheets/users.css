@@ -1,0 +1,20 @@
+.check-box-width{
+  width: 3%;
+}
+
+.session-form{
+  width: 30%;
+  padding-right: 3%;
+}
+
+.session-checkbox{
+  margin-left: 2%;
+}
+
+.session-checkbox-label{
+  padding: 0 !important;
+}
+
+.forgot-form{
+  width: 30%;
+}
