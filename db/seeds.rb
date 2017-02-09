@@ -1,11 +1,12 @@
 ActiveRecord::Base.transaction do
   User.create(name:                  'admin',
-              surname:               'ya_u_mami_ingener',
+              surname:               'adminko',
               adress:                'Bourbon Street',
-              email:                 'krasavchik@email.ru',
+              email:                 'admin@gmail.com',
               birthdate:              Time.now - 28.years,
-              password:              'molodec',
-              password_confirmation: 'molodec'
+              password:              '111111',
+              password_confirmation: '111111',
+              admin:                 true
   )
 
   3.times do
@@ -14,8 +15,8 @@ ActiveRecord::Base.transaction do
                 adress:                Faker::Address.street_name,
                 email:                 Faker::Internet.email,
                 birthdate:             Time.now - 28.years,
-                password:              'password',
-                password_confirmation: 'password'
+                password:              '111111',
+                password_confirmation: '111111'
     )
 
   end
@@ -50,7 +51,7 @@ ActiveRecord::Base.transaction do
   10.times do
     Repair.create(name:     tools_repairs.pop,
                   duration: rand(9) + 1,
-                  price:    rand(500.2...3032.9)
+                  price:    rand(500.2...3032.9).round(2)
     )
   end
   40.times do

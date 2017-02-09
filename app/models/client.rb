@@ -6,4 +6,12 @@ class Client < ApplicationRecord
   validates :name, presence: true
   validates :adress, presence: true
   validates :phone_number, presence: true
+
+  def purchase_sum
+    repairs.sum(:price)
+  end
+
+  def tools_count
+    tools.count(:id)
+  end
 end

@@ -5,6 +5,8 @@
  *= require bootstrap-datepicker3
  *= require_self
  *= require_tree .
+ *= require dataTables/jquery.dataTables
+ *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 */
 
 .new-record-button.btn{
@@ -37,4 +39,32 @@ a{
 input[type=text]:read-only {
   background: white;
   cursor: pointer;
+}
+
+.statistics{
+  display: inline-block;
+}
+
+.caption.stat-no-padding{
+  padding: 0 !important;
+}
+
+.row.stat-element{
+  margin-left: 10%;
+}
+
+.col-sm-6.stat-full-width{
+  width: 120%;
+}
+
+.col-sm-6.right{
+  margin-left: 120%;
+}
+
+.col-sm-6.left{
+  margin-left: 70%;
+}
+
+.thumbnail.stat-padding{
+  padding: 7%;
 }

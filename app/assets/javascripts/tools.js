@@ -7,4 +7,6 @@ $(document).ready(function() {
     startDate: '2000',
     endDate: new Date()
   });
+
+  $('.datatable_tools').DataTable({});
 });

@@ -10,6 +10,7 @@ class ToolsController < ApplicationController
   # GET /tools/1
   # GET /tools/1.json
   def show
+    @orders = @tool.orders
   end
 
   # GET /tools/new
