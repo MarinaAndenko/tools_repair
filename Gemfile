@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 gem "twitter-bootstrap-rails"
 gem 'bootstrap-datepicker-rails'
