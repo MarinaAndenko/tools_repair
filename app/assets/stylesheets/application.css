@@ -8,11 +8,10 @@
 */
 
 .new-record-button.btn{
-  color: white;
   margin-bottom: 1%;
 }
 
-.delete-record-button.btn{
+.actions-buttons.btn{
   color: white;
 }
 
@@ -33,4 +32,9 @@ a{
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
   background-color: #0275d8 !important;
   color: white !important;
+}
+
+input[type=text]:read-only {
+  background: white;
+  cursor: pointer;
 }

@@ -24,7 +24,7 @@
   <div class="form-group">
     <%= f.label :production_year, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :production_year, :class => 'form-control datepicker_tools' %>
+      <%= f.text_field :production_year, :class => 'form-control datepicker_tools', readonly: true, value: @tool.production_year.try(:strftime, "%Y") %>
     </div>
     <%=f.error_span(:production_year) %>
   </div>

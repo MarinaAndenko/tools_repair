@@ -3,7 +3,7 @@
   <h1 class='title-with-button'><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
   <%= link_to t('.new', :default => t("helpers.links.new")),
             new_client_path,
-            :class => 'btn btn-primary new-record-button' %>
+            :class => 'btn btn-primary new-record-button actions-buttons' %>
 </div>
 <table class="table table-striped">
   <thead>
@@ -27,13 +27,14 @@
         <td><%= client.contact %></td>
         <td><%= client.created_at.strftime("%d/%m/%Y") %></td>
         <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")), client_path(client), :class => 'btn btn-warning btn-xs actions-buttons' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_client_path(client), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       client_path(client),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger delete-record-button' %>
+                      :class => 'btn btn-xs btn-danger actions-buttons' %>
         </td>
       </tr>
     <% end %>

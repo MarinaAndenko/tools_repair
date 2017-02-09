@@ -21,7 +21,7 @@
   <div class="form-group">
     <%= f.label :birthdate, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :birthdate, :class => 'form-control' %>
+      <%= f.text_field :birthdate, :class => 'form-control datepicker_users', readonly: true %>
     </div>
     <%=f.error_span(:birthdate) %>
   </div>

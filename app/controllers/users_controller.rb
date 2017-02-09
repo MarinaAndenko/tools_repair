@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :get_user, only: [:show, :edit, :update, :destroy]
+  before_action :get_user, except: [:index, :new, :create]
+  before_action :check_if_admin, except: [:edit, :update]
 
   def index
     @users = User.all
@@ -33,6 +34,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def make_admin
+    @user.update(admin: params[:user][:admin] == '1')
+  end
+
   def destroy
     @user.destroy
     redirect_to users_admin_index_path
@@ -42,6 +47,12 @@ class UsersController < ApplicationController
 
   def get_user
     @user = User.find(params[:id])
+  end
+
+  def check_if_admin
+    redirect_to :back unless current_user.admin?
+  rescue ActionController::RedirectBackError
+    redirect_to root_path
   end
 
   def user_params

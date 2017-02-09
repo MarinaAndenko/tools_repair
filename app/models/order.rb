@@ -8,4 +8,8 @@ class Order < ApplicationRecord
   validates :tool, presence: true
   validates :repair, presence: true
   validates :start_date, presence: true
+
+  def finish_date
+    start_date + repair.duration
+  end
 end

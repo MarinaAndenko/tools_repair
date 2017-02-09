@@ -27,7 +27,7 @@
   <div class="form-group">
     <%= f.label :start_date, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :start_date, :class => 'form-control datepicker_orders' %>
+      <%= f.text_field :start_date, :class => 'form-control datepicker_orders', readonly: true, value: @order.start_date.try(:strftime, "%d/%m/%Y") %>
     </div>
     <%=f.error_span(:start_date, class: 'span-validation-message') %>
   </div>

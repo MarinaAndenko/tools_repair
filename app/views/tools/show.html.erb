@@ -19,9 +19,9 @@
 <%= link_to t('.back', :default => t("helpers.links.back")),
               tools_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_tool_path(@tool), :class => 'btn btn-default' %>
+              edit_tool_path(@tool), :class => 'btn btn-warning actions-buttons' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               tool_path(@tool),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger delete-record-button' %>
+              :class => 'btn btn-danger delete-record-button actions-buttons' %>
